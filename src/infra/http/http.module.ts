@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 
-import { PrismaService } from '../prisma'
+import { DatabaseModule } from '../database'
 import {
   AuthenticateController,
   CreateAccountController,
@@ -9,12 +9,12 @@ import {
 } from './controllers'
 
 @Module({
+  imports: [DatabaseModule],
   controllers: [
     CreateAccountController,
     AuthenticateController,
     CreateQuestionController,
     FetchRecentQuestionsController,
   ],
-  providers: [PrismaService],
 })
 export class HttpModule {}
