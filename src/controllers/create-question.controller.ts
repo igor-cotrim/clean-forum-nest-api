@@ -1,9 +1,9 @@
 import { Body, Controller, Post, UseGuards } from '@nestjs/common'
 import { z } from 'zod'
 
-import { CurrentUser, JwtAuthGuard, UserPayload } from 'src/auth'
-import { ZodValidationPipe } from 'src/pipes'
-import { PrismaService } from 'src/prisma'
+import { CurrentUser, JwtAuthGuard, UserPayload } from '@/auth'
+import { ZodValidationPipe } from '@/pipes'
+import { PrismaService } from '@/prisma'
 
 const createQuestionBodySchema = z.object({
   title: z.string(),

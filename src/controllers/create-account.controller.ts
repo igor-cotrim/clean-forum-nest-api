@@ -9,8 +9,8 @@ import {
 import { hash } from 'bcryptjs'
 import { z } from 'zod'
 
-import { PrismaService } from 'src/prisma'
-import { ZodValidationPipe } from 'src/pipes'
+import { PrismaService } from '@/prisma'
+import { ZodValidationPipe } from '@/pipes'
 
 const createAccountBodySchema = z.object({
   name: z.string().min(2).max(255),

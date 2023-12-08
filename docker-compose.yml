@@ -10,6 +10,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: docker
       POSTGRES_DB: clean-forum-nest
-      PGDATA: /data/postgres
-    volumes:
-      - ./data/pg:/data/postgres
+    #   PGDATA: /data/postgres
+    # volumes:
+    #   - ./data/pg:/data/postgres
