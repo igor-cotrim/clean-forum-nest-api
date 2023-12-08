@@ -30,8 +30,8 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-  "title": "Qual a sua cor favorita?",
-  "content": "Estou em dúvida entre azul e vermelho"
+  "title": "Qual a sua comida favorita?",
+  "content": "Estou em dúvida entre lasanha e sushi"
 }
 
 ###
