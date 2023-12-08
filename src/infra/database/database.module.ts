@@ -9,11 +9,12 @@ import {
   PrismaQuestionCommentsRepository,
   PrismaQuestionsRepository,
 } from './prisma/repositories'
+import { QuestionsRepository } from '@/domain/forum/application/repositories'
 
 @Module({
   providers: [
     PrismaService,
-    PrismaQuestionsRepository,
+    { provide: QuestionsRepository, useClass: PrismaQuestionsRepository },
     PrismaQuestionAttachmentsRepository,
     PrismaQuestionCommentsRepository,
     PrismaAnswersRepository,
@@ -22,7 +23,7 @@ import {
   ],
   exports: [
     PrismaService,
-    PrismaQuestionsRepository,
+    QuestionsRepository,
     PrismaQuestionAttachmentsRepository,
     PrismaQuestionCommentsRepository,
     PrismaAnswersRepository,
