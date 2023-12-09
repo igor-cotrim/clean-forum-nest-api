@@ -19,3 +19,7 @@ export * from './delete-question-comment'
 export * from './delete-answer-comment'
 export * from './fetch-question-comments'
 export * from './fetch-answer-comments'
+
+// Students
+export * from './register-student'
+export * from './authenticate-student'
