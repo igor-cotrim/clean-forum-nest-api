@@ -10,3 +10,6 @@ export * from './make-question-comment'
 
 // Notification
 export * from './make-notification'
+
+// Student
+export * from './make-student'

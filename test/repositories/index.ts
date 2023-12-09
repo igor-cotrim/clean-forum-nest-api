@@ -10,3 +10,6 @@ export * from './in-memory-questions-repository'
 
 // Notification
 export * from './in-memory-notifications-repository'
+
+// Student
+export * from './in-memory-students-repository'
