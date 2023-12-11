@@ -36,7 +36,7 @@ describe('#Authenticate Student UseCase', () => {
 
     expect(result.isRight()).toBeTruthy()
     expect(result.value).toEqual({
-      access_token: expect.any(String),
+      accessToken: expect.any(String),
     })
   })
 })
