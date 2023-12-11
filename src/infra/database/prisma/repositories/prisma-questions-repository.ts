@@ -14,7 +14,6 @@ export class PrismaQuestionsRepository implements QuestionsRepository {
     const question = await this.prisma.question.findUnique({
       where: { id },
     })
-
     if (!question) return null
 
     return PrismaQuestionMapper.toDomain(question)
@@ -32,13 +31,13 @@ export class PrismaQuestionsRepository implements QuestionsRepository {
 
   async findManyRecent({ page }: PaginationParams): Promise<Question[]> {
     const perPage = 20
-    const QuestionsRepository = await this.prisma.question.findMany({
+    const questions = await this.prisma.question.findMany({
       orderBy: { createdAt: 'desc' },
       take: perPage,
       skip: (page - 1) * perPage,
     })
 
-    return QuestionsRepository.map(PrismaQuestionMapper.toDomain)
+    return questions.map(PrismaQuestionMapper.toDomain)
   }
 
   async create(question: Question): Promise<void> {
