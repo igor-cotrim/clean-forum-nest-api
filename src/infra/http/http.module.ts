@@ -14,6 +14,7 @@ import {
   EditAnswerUseCase,
   EditQuestionUseCase,
   FetchQuestionAnswersUseCase,
+  FetchQuestionCommentsUseCase,
   FetchRecentQuestionsUseCase,
   GetQuestionBySlugUseCase,
   RegisterStudentUseCase,
@@ -35,6 +36,7 @@ import {
   EditAnswerController,
   EditQuestionController,
   FetchQuestionAnswersController,
+  FetchQuestionCommentsController,
   FetchRecentQuestionsController,
   GetQuestionBySlugController,
 } from './controllers'
@@ -52,6 +54,7 @@ import {
     DeleteQuestionController,
     AnswerQuestionController,
     FetchQuestionAnswersController,
+    FetchQuestionCommentsController,
     CommentOnQuestionController,
     DeleteQuestionCommentController,
 
@@ -72,6 +75,7 @@ import {
     DeleteQuestionUseCase,
     AnswerQuestionUseCase,
     FetchQuestionAnswersUseCase,
+    FetchQuestionCommentsUseCase,
     CommentOnQuestionUseCase,
     DeleteQuestionCommentUseCase,
 
