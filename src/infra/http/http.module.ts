@@ -4,6 +4,7 @@ import {
   AuthenticateStudentUseCase,
   CreateQuestionUseCase,
   FetchRecentQuestionsUseCase,
+  GetQuestionBySlugUseCase,
   RegisterStudentUseCase,
 } from '@/domain/forum/application/useCases'
 import { DatabaseModule } from '../database'
@@ -13,6 +14,7 @@ import {
   CreateAccountController,
   CreateQuestionController,
   FetchRecentQuestionsController,
+  GetQuestionBySlugController,
 } from './controllers'
 
 @Module({
@@ -22,12 +24,14 @@ import {
     AuthenticateController,
     CreateQuestionController,
     FetchRecentQuestionsController,
+    GetQuestionBySlugController,
   ],
   providers: [
     CreateQuestionUseCase,
     FetchRecentQuestionsUseCase,
     RegisterStudentUseCase,
     AuthenticateStudentUseCase,
+    GetQuestionBySlugUseCase,
   ],
 })
 export class HttpModule {}
