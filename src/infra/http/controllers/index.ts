@@ -11,3 +11,4 @@ export * from './answer-question.controller'
 
 export * from './edit-answer.controller'
 export * from './delete-answer.controller'
+export * from './choose-question-best-answer.controller'

@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common'
 import {
   AnswerQuestionUseCase,
   AuthenticateStudentUseCase,
+  ChooseQuestionBestAnswerUseCase,
   CreateQuestionUseCase,
   DeleteAnswerUseCase,
   DeleteQuestionUseCase,
@@ -18,6 +19,7 @@ import { CryptographyModule } from '../cryptography'
 import {
   AnswerQuestionController,
   AuthenticateController,
+  ChooseQuestionBestAnswerController,
   CreateAccountController,
   CreateQuestionController,
   DeleteAnswerController,
@@ -45,6 +47,7 @@ import {
 
     EditAnswerController,
     DeleteAnswerController,
+    ChooseQuestionBestAnswerController,
   ],
   providers: [
     RegisterStudentUseCase,
@@ -60,6 +63,7 @@ import {
 
     EditAnswerUseCase,
     DeleteAnswerUseCase,
+    ChooseQuestionBestAnswerUseCase,
   ],
 })
 export class HttpModule {}
