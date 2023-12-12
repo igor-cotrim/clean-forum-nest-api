@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common'
 import {
   AuthenticateStudentUseCase,
   CreateQuestionUseCase,
+  EditQuestionUseCase,
   FetchRecentQuestionsUseCase,
   GetQuestionBySlugUseCase,
   RegisterStudentUseCase,
@@ -13,6 +14,7 @@ import {
   AuthenticateController,
   CreateAccountController,
   CreateQuestionController,
+  EditQuestionController,
   FetchRecentQuestionsController,
   GetQuestionBySlugController,
 } from './controllers'
@@ -25,6 +27,7 @@ import {
     CreateQuestionController,
     FetchRecentQuestionsController,
     GetQuestionBySlugController,
+    EditQuestionController,
   ],
   providers: [
     CreateQuestionUseCase,
@@ -32,6 +35,7 @@ import {
     RegisterStudentUseCase,
     AuthenticateStudentUseCase,
     GetQuestionBySlugUseCase,
+    EditQuestionUseCase,
   ],
 })
 export class HttpModule {}

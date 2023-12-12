@@ -11,6 +11,11 @@ import {
   PrismaStudentsRepository,
 } from './prisma/repositories'
 import {
+  AnswerAttachmentsRepository,
+  AnswerCommentsRepository,
+  AnswersRepository,
+  QuestionAttachmentsRepository,
+  QuestionCommentsRepository,
   QuestionsRepository,
   StudentsRepository,
 } from '@/domain/forum/application/repositories'
@@ -20,21 +25,33 @@ import {
     PrismaService,
     { provide: QuestionsRepository, useClass: PrismaQuestionsRepository },
     { provide: StudentsRepository, useClass: PrismaStudentsRepository },
-    PrismaQuestionAttachmentsRepository,
-    PrismaQuestionCommentsRepository,
-    PrismaAnswersRepository,
-    PrismaAnswerAttachmentsRepository,
-    PrismaAnswerCommentsRepository,
+    {
+      provide: QuestionAttachmentsRepository,
+      useClass: PrismaQuestionAttachmentsRepository,
+    },
+    {
+      provide: QuestionCommentsRepository,
+      useClass: PrismaQuestionCommentsRepository,
+    },
+    { provide: AnswersRepository, useClass: PrismaAnswersRepository },
+    {
+      provide: AnswerAttachmentsRepository,
+      useClass: PrismaAnswerAttachmentsRepository,
+    },
+    {
+      provide: AnswerCommentsRepository,
+      useClass: PrismaAnswerCommentsRepository,
+    },
   ],
   exports: [
     PrismaService,
     QuestionsRepository,
     StudentsRepository,
-    PrismaQuestionAttachmentsRepository,
-    PrismaQuestionCommentsRepository,
-    PrismaAnswersRepository,
-    PrismaAnswerAttachmentsRepository,
-    PrismaAnswerCommentsRepository,
+    QuestionAttachmentsRepository,
+    QuestionCommentsRepository,
+    AnswersRepository,
+    AnswerAttachmentsRepository,
+    AnswerCommentsRepository,
   ],
 })
 export class DatabaseModule {}
