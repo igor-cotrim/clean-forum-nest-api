@@ -13,5 +13,6 @@ export * from './comment-on-question.controller'
 
 export * from './edit-answer.controller'
 export * from './delete-answer.controller'
+export * from './delete-answer-comment.controller'
 export * from './choose-question-best-answer.controller'
 export * from './comment-on-answer.controller'

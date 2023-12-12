@@ -7,6 +7,7 @@ import {
   CommentOnAnswerUseCase,
   CommentOnQuestionUseCase,
   CreateQuestionUseCase,
+  DeleteAnswerCommentUseCase,
   DeleteAnswerUseCase,
   DeleteQuestionCommentUseCase,
   DeleteQuestionUseCase,
@@ -27,6 +28,7 @@ import {
   CommentOnQuestionController,
   CreateAccountController,
   CreateQuestionController,
+  DeleteAnswerCommentController,
   DeleteAnswerController,
   DeleteQuestionCommentController,
   DeleteQuestionController,
@@ -55,6 +57,7 @@ import {
 
     EditAnswerController,
     DeleteAnswerController,
+    DeleteAnswerCommentController,
     ChooseQuestionBestAnswerController,
     CommentOnAnswerController,
   ],
@@ -74,6 +77,7 @@ import {
 
     EditAnswerUseCase,
     DeleteAnswerUseCase,
+    DeleteAnswerCommentUseCase,
     ChooseQuestionBestAnswerUseCase,
     CommentOnAnswerUseCase,
   ],
