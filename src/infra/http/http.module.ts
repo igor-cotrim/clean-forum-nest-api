@@ -4,6 +4,7 @@ import {
   AnswerQuestionUseCase,
   AuthenticateStudentUseCase,
   ChooseQuestionBestAnswerUseCase,
+  CommentOnQuestionUseCase,
   CreateQuestionUseCase,
   DeleteAnswerUseCase,
   DeleteQuestionUseCase,
@@ -20,6 +21,7 @@ import {
   AnswerQuestionController,
   AuthenticateController,
   ChooseQuestionBestAnswerController,
+  CommentOnQuestionController,
   CreateAccountController,
   CreateQuestionController,
   DeleteAnswerController,
@@ -44,6 +46,7 @@ import {
     DeleteQuestionController,
     AnswerQuestionController,
     FetchQuestionAnswersController,
+    CommentOnQuestionController,
 
     EditAnswerController,
     DeleteAnswerController,
@@ -60,6 +63,7 @@ import {
     DeleteQuestionUseCase,
     AnswerQuestionUseCase,
     FetchQuestionAnswersUseCase,
+    CommentOnQuestionUseCase,
 
     EditAnswerUseCase,
     DeleteAnswerUseCase,

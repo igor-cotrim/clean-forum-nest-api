@@ -8,6 +8,7 @@ export * from './fetch-question-answers.controller'
 export * from './edit-question.controller'
 export * from './delete-question.controller'
 export * from './answer-question.controller'
+export * from './comment-on-question.controller'
 
 export * from './edit-answer.controller'
 export * from './delete-answer.controller'
