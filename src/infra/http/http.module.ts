@@ -13,6 +13,7 @@ import {
   DeleteQuestionUseCase,
   EditAnswerUseCase,
   EditQuestionUseCase,
+  FetchAnswerCommentsUseCase,
   FetchQuestionAnswersUseCase,
   FetchQuestionCommentsUseCase,
   FetchRecentQuestionsUseCase,
@@ -35,6 +36,7 @@ import {
   DeleteQuestionController,
   EditAnswerController,
   EditQuestionController,
+  FetchAnswerCommentsController,
   FetchQuestionAnswersController,
   FetchQuestionCommentsController,
   FetchRecentQuestionsController,
@@ -63,6 +65,7 @@ import {
     DeleteAnswerCommentController,
     ChooseQuestionBestAnswerController,
     CommentOnAnswerController,
+    FetchAnswerCommentsController,
   ],
   providers: [
     RegisterStudentUseCase,
@@ -84,6 +87,7 @@ import {
     DeleteAnswerCommentUseCase,
     ChooseQuestionBestAnswerUseCase,
     CommentOnAnswerUseCase,
+    FetchAnswerCommentsUseCase,
   ],
 })
 export class HttpModule {}
