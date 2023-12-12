@@ -5,6 +5,7 @@ import {
   AuthenticateStudentUseCase,
   CreateQuestionUseCase,
   DeleteQuestionUseCase,
+  EditAnswerUseCase,
   EditQuestionUseCase,
   FetchRecentQuestionsUseCase,
   GetQuestionBySlugUseCase,
@@ -18,6 +19,7 @@ import {
   CreateAccountController,
   CreateQuestionController,
   DeleteQuestionController,
+  EditAnswerController,
   EditQuestionController,
   FetchRecentQuestionsController,
   GetQuestionBySlugController,
@@ -34,6 +36,7 @@ import {
     EditQuestionController,
     DeleteQuestionController,
     AnswerQuestionController,
+    EditAnswerController,
   ],
   providers: [
     CreateQuestionUseCase,
@@ -44,6 +47,7 @@ import {
     EditQuestionUseCase,
     DeleteQuestionUseCase,
     AnswerQuestionUseCase,
+    EditAnswerUseCase,
   ],
 })
 export class HttpModule {}
