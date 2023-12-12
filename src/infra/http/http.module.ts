@@ -8,6 +8,7 @@ import {
   DeleteQuestionUseCase,
   EditAnswerUseCase,
   EditQuestionUseCase,
+  FetchQuestionAnswersUseCase,
   FetchRecentQuestionsUseCase,
   GetQuestionBySlugUseCase,
   RegisterStudentUseCase,
@@ -23,6 +24,7 @@ import {
   DeleteQuestionController,
   EditAnswerController,
   EditQuestionController,
+  FetchQuestionAnswersController,
   FetchRecentQuestionsController,
   GetQuestionBySlugController,
 } from './controllers'
@@ -32,24 +34,30 @@ import {
   controllers: [
     CreateAccountController,
     AuthenticateController,
-    CreateQuestionController,
+
     FetchRecentQuestionsController,
+    CreateQuestionController,
     GetQuestionBySlugController,
     EditQuestionController,
     DeleteQuestionController,
     AnswerQuestionController,
+    FetchQuestionAnswersController,
+
     EditAnswerController,
     DeleteAnswerController,
   ],
   providers: [
-    CreateQuestionUseCase,
-    FetchRecentQuestionsUseCase,
     RegisterStudentUseCase,
     AuthenticateStudentUseCase,
+
+    FetchRecentQuestionsUseCase,
+    CreateQuestionUseCase,
     GetQuestionBySlugUseCase,
     EditQuestionUseCase,
     DeleteQuestionUseCase,
     AnswerQuestionUseCase,
+    FetchQuestionAnswersUseCase,
+
     EditAnswerUseCase,
     DeleteAnswerUseCase,
   ],
