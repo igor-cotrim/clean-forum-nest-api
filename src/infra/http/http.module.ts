@@ -4,6 +4,7 @@ import {
   AnswerQuestionUseCase,
   AuthenticateStudentUseCase,
   ChooseQuestionBestAnswerUseCase,
+  CommentOnAnswerUseCase,
   CommentOnQuestionUseCase,
   CreateQuestionUseCase,
   DeleteAnswerUseCase,
@@ -22,6 +23,7 @@ import {
   AnswerQuestionController,
   AuthenticateController,
   ChooseQuestionBestAnswerController,
+  CommentOnAnswerController,
   CommentOnQuestionController,
   CreateAccountController,
   CreateQuestionController,
@@ -54,6 +56,7 @@ import {
     EditAnswerController,
     DeleteAnswerController,
     ChooseQuestionBestAnswerController,
+    CommentOnAnswerController,
   ],
   providers: [
     RegisterStudentUseCase,
@@ -72,6 +75,7 @@ import {
     EditAnswerUseCase,
     DeleteAnswerUseCase,
     ChooseQuestionBestAnswerUseCase,
+    CommentOnAnswerUseCase,
   ],
 })
 export class HttpModule {}
