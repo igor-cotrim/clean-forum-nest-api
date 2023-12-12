@@ -7,6 +7,7 @@ export * from './fetch-recent-questions.controller'
 export * from './fetch-question-answers.controller'
 export * from './edit-question.controller'
 export * from './delete-question.controller'
+export * from './delete-question-comment.controller'
 export * from './answer-question.controller'
 export * from './comment-on-question.controller'
 
