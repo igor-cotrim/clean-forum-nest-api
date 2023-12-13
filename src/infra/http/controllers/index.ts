@@ -18,3 +18,5 @@ export * from './delete-answer-comment.controller'
 export * from './choose-question-best-answer.controller'
 export * from './comment-on-answer.controller'
 export * from './fetch-answer-comments.controller'
+
+export * from './upload-attachment.controller'

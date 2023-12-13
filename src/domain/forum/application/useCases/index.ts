@@ -23,3 +23,6 @@ export * from './fetch-answer-comments'
 // Students
 export * from './register-student'
 export * from './authenticate-student'
+
+// Attachments
+export * from './upload-and-create-attachment'

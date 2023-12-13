@@ -13,3 +13,6 @@ export * from './in-memory-notifications-repository'
 
 // Student
 export * from './in-memory-students-repository'
+
+// Attachment
+export * from './in-memory-attachments-repository'

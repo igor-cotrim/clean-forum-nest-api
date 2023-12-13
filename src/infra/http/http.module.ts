@@ -41,6 +41,7 @@ import {
   FetchQuestionCommentsController,
   FetchRecentQuestionsController,
   GetQuestionBySlugController,
+  UploadAttachmentController,
 } from './controllers'
 
 @Module({
@@ -66,6 +67,8 @@ import {
     ChooseQuestionBestAnswerController,
     CommentOnAnswerController,
     FetchAnswerCommentsController,
+
+    UploadAttachmentController,
   ],
   providers: [
     RegisterStudentUseCase,
