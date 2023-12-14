@@ -19,9 +19,11 @@ import {
   FetchRecentQuestionsUseCase,
   GetQuestionBySlugUseCase,
   RegisterStudentUseCase,
+  UploadAndCreateAttachmentUseCase,
 } from '@/domain/forum/application/useCases'
 import { DatabaseModule } from '../database'
 import { CryptographyModule } from '../cryptography'
+import { StorageModule } from '../storage'
 import {
   AnswerQuestionController,
   AuthenticateController,
@@ -45,7 +47,7 @@ import {
 } from './controllers'
 
 @Module({
-  imports: [DatabaseModule, CryptographyModule],
+  imports: [DatabaseModule, CryptographyModule, StorageModule],
   controllers: [
     CreateAccountController,
     AuthenticateController,
@@ -91,6 +93,8 @@ import {
     ChooseQuestionBestAnswerUseCase,
     CommentOnAnswerUseCase,
     FetchAnswerCommentsUseCase,
+
+    UploadAndCreateAttachmentUseCase,
   ],
 })
 export class HttpModule {}

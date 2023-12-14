@@ -5,6 +5,7 @@ import {
   PrismaAnswerAttachmentsRepository,
   PrismaAnswerCommentsRepository,
   PrismaAnswersRepository,
+  PrismaAttachmentsRepository,
   PrismaQuestionAttachmentsRepository,
   PrismaQuestionCommentsRepository,
   PrismaQuestionsRepository,
@@ -14,6 +15,7 @@ import {
   AnswerAttachmentsRepository,
   AnswerCommentsRepository,
   AnswersRepository,
+  AttachmentsRepository,
   QuestionAttachmentsRepository,
   QuestionCommentsRepository,
   QuestionsRepository,
@@ -42,6 +44,10 @@ import {
       provide: AnswerCommentsRepository,
       useClass: PrismaAnswerCommentsRepository,
     },
+    {
+      provide: AttachmentsRepository,
+      useClass: PrismaAttachmentsRepository,
+    },
   ],
   exports: [
     PrismaService,
@@ -52,6 +58,7 @@ import {
     AnswersRepository,
     AnswerAttachmentsRepository,
     AnswerCommentsRepository,
+    AttachmentsRepository,
   ],
 })
 export class DatabaseModule {}

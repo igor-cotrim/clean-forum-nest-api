@@ -1,6 +1,7 @@
 export * from './prisma-answer-attachment-mapper'
 export * from './prisma-answer-comment-mapper'
 export * from './prisma-answer-mapper'
+export * from './prisma-attachment-mapper'
 export * from './prisma-question-attachment-mapper'
 export * from './prisma-question-comment-mapper'
 export * from './prisma-question-mapper'
