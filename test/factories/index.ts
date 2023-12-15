@@ -13,3 +13,6 @@ export * from './make-notification'
 
 // Student
 export * from './make-student'
+
+// Attachment
+export * from './make-attachment'

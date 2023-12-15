@@ -90,4 +90,45 @@ describe('#Edit Question UseCase', () => {
     expect(result.isLeft()).toBeTruthy()
     expect(result.value).toBeInstanceOf(NotAllowerError)
   })
+
+  it('should sync new and removed attachments when editing a question', async () => {
+    const newQuestion = makeQuestion(
+      { authorId: new UniqueEntityId('author-1') },
+      new UniqueEntityId('question-1'),
+    )
+
+    inMemoryQuestionsRepository.create(newQuestion)
+
+    inMemoryQuestionAttachmentsRepository.items.push(
+      makeQuestionAttachment({
+        questionId: newQuestion.id,
+        attachmentId: new UniqueEntityId('attachment-1'),
+      }),
+      makeQuestionAttachment({
+        questionId: newQuestion.id,
+        attachmentId: new UniqueEntityId('attachment-2'),
+      }),
+    )
+
+    const result = await sut.execute({
+      authorId: 'author-1',
+      questionId: newQuestion.id.toString(),
+      title: 'New title',
+      content: 'New content',
+      attachmentsIds: ['attachment-1', 'attachment-3'],
+    })
+
+    expect(result.isRight()).toBeTruthy()
+    expect(inMemoryQuestionAttachmentsRepository.items).toHaveLength(2)
+    expect(inMemoryQuestionAttachmentsRepository.items).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          attachmentId: new UniqueEntityId('attachment-1'),
+        }),
+        expect.objectContaining({
+          attachmentId: new UniqueEntityId('attachment-3'),
+        }),
+      ]),
+    )
+  })
 })
