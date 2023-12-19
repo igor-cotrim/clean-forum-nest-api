@@ -1,23 +1,30 @@
 import { UniqueEntityId } from '@/core/entities'
 import { NotAllowerError } from '@/core/errors'
 import {
+  InMemoryAttachmentsRepository,
   InMemoryQuestionAttachmentsRepository,
   InMemoryQuestionsRepository,
+  InMemoryStudentsRepository,
 } from 'test/repositories'
 import { makeQuestion, makeQuestionAttachment } from 'test/factories'
 import { EditQuestionUseCase } from '../edit-question'
 
 let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
-
+let inMemoryAttachmentsRepository: InMemoryAttachmentsRepository
+let inMemoryStudentsRepository: InMemoryStudentsRepository
 let sut: EditQuestionUseCase
 
 describe('#Edit Question UseCase', () => {
   beforeEach(() => {
     inMemoryQuestionAttachmentsRepository =
       new InMemoryQuestionAttachmentsRepository()
+    inMemoryAttachmentsRepository = new InMemoryAttachmentsRepository()
+    inMemoryStudentsRepository = new InMemoryStudentsRepository()
     inMemoryQuestionsRepository = new InMemoryQuestionsRepository(
       inMemoryQuestionAttachmentsRepository,
+      inMemoryAttachmentsRepository,
+      inMemoryStudentsRepository,
     )
     sut = new EditQuestionUseCase(
       inMemoryQuestionsRepository,

@@ -4,8 +4,10 @@ import { makeAnswer, makeQuestion } from 'test/factories'
 import {
   InMemoryAnswerAttachmentsRepository,
   InMemoryAnswersRepository,
+  InMemoryAttachmentsRepository,
   InMemoryQuestionAttachmentsRepository,
   InMemoryQuestionsRepository,
+  InMemoryStudentsRepository,
 } from 'test/repositories'
 import {
   SendNotificationUseCase,
@@ -16,6 +18,8 @@ import { NotificationsRepository } from '../../repositories'
 import { OnQuestionBestAnswerChosen } from '../on-question-best-answer-chosen'
 
 let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository
+let inMemoryAttachmentsRepository: InMemoryAttachmentsRepository
+let inMemoryStudentsRepository: InMemoryStudentsRepository
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let inMemoryAnswerAttachmentsRepository: InMemoryAnswerAttachmentsRepository
 let inMemoryAnswersRepository: InMemoryAnswersRepository
@@ -31,8 +35,12 @@ describe('#On Question Best Answer Chosen', () => {
   beforeEach(() => {
     inMemoryQuestionAttachmentsRepository =
       new InMemoryQuestionAttachmentsRepository()
+    inMemoryAttachmentsRepository = new InMemoryAttachmentsRepository()
+    inMemoryStudentsRepository = new InMemoryStudentsRepository()
     inMemoryQuestionsRepository = new InMemoryQuestionsRepository(
       inMemoryQuestionAttachmentsRepository,
+      inMemoryAttachmentsRepository,
+      inMemoryStudentsRepository,
     )
     inMemoryAnswerAttachmentsRepository =
       new InMemoryAnswerAttachmentsRepository()

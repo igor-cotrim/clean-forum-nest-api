@@ -6,7 +6,11 @@ import {
   QuestionsRepository,
 } from '@/domain/forum/application/repositories'
 import { Question } from '@/domain/forum/enterprise/entities'
-import { PrismaQuestionMapper } from '@/infra/database/prisma/mappers'
+import { QuestionDetails } from '@/domain/forum/enterprise/entities/value-objects'
+import {
+  PrismaQuestionDetailsMapper,
+  PrismaQuestionMapper,
+} from '@/infra/database/prisma/mappers'
 import { PrismaService } from '@/infra/database/prisma'
 
 @Injectable()
@@ -33,6 +37,17 @@ export class PrismaQuestionsRepository implements QuestionsRepository {
     if (!question) return null
 
     return PrismaQuestionMapper.toDomain(question)
+  }
+
+  async findDetailsBySlug(slug: string): Promise<QuestionDetails | null> {
+    const question = await this.prisma.question.findUnique({
+      where: { slug },
+      include: { author: true, attachments: true },
+    })
+
+    if (!question) return null
+
+    return PrismaQuestionDetailsMapper.toDomain(question)
   }
 
   async findManyRecent({ page }: PaginationParams): Promise<Question[]> {

@@ -4,8 +4,10 @@ import { makeAnswer, makeQuestion } from 'test/factories'
 import {
   InMemoryAnswerAttachmentsRepository,
   InMemoryAnswersRepository,
+  InMemoryAttachmentsRepository,
   InMemoryQuestionAttachmentsRepository,
   InMemoryQuestionsRepository,
+  InMemoryStudentsRepository,
 } from 'test/repositories'
 import {
   SendNotificationUseCase,
@@ -16,6 +18,8 @@ import { NotificationsRepository } from '../../repositories'
 import { OnAnswerCreated } from '../on-answer-created'
 
 let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository
+let inMemoryAttachmentsRepository: InMemoryAttachmentsRepository
+let inMemoryStudentsRepository: InMemoryStudentsRepository
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let inMemoryAnswerAttachmentsRepository: InMemoryAnswerAttachmentsRepository
 let inMemoryAnswersRepository: InMemoryAnswersRepository
@@ -31,8 +35,12 @@ describe('#On Answer Created', () => {
   beforeEach(() => {
     inMemoryQuestionAttachmentsRepository =
       new InMemoryQuestionAttachmentsRepository()
+    inMemoryAttachmentsRepository = new InMemoryAttachmentsRepository()
+    inMemoryStudentsRepository = new InMemoryStudentsRepository()
     inMemoryQuestionsRepository = new InMemoryQuestionsRepository(
       inMemoryQuestionAttachmentsRepository,
+      inMemoryAttachmentsRepository,
+      inMemoryStudentsRepository,
     )
     inMemoryAnswerAttachmentsRepository =
       new InMemoryAnswerAttachmentsRepository()
