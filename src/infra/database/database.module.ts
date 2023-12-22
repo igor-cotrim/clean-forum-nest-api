@@ -1,17 +1,5 @@
 import { Module } from '@nestjs/common'
 
-import { PrismaService } from './prisma'
-import {
-  PrismaAnswerAttachmentsRepository,
-  PrismaAnswerCommentsRepository,
-  PrismaAnswersRepository,
-  PrismaAttachmentsRepository,
-  PrismaNotificationsRepository,
-  PrismaQuestionAttachmentsRepository,
-  PrismaQuestionCommentsRepository,
-  PrismaQuestionsRepository,
-  PrismaStudentsRepository,
-} from './prisma/repositories'
 import {
   AnswerAttachmentsRepository,
   AnswerCommentsRepository,
@@ -23,8 +11,22 @@ import {
   StudentsRepository,
 } from '@/domain/forum/application/repositories'
 import { NotificationsRepository } from '@/domain/notification/application/repositories'
+import { CacheModule } from '../cache'
+import {
+  PrismaAnswerAttachmentsRepository,
+  PrismaAnswerCommentsRepository,
+  PrismaAnswersRepository,
+  PrismaAttachmentsRepository,
+  PrismaNotificationsRepository,
+  PrismaQuestionAttachmentsRepository,
+  PrismaQuestionCommentsRepository,
+  PrismaQuestionsRepository,
+  PrismaStudentsRepository,
+} from './prisma/repositories'
+import { PrismaService } from './prisma'
 
 @Module({
+  imports: [CacheModule],
   providers: [
     PrismaService,
     { provide: QuestionsRepository, useClass: PrismaQuestionsRepository },
