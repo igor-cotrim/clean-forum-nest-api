@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Injectable } from '@nestjs/common'
+
 import { DomainEvents, EventHandler } from '@/core/events'
 import { QuestionsRepository } from '@/domain/forum/application/repositories'
 import { AnswerCreatedEvent } from '@/domain/forum/enterprise/events'
 import { SendNotificationUseCase } from '../useCases'
 
+@Injectable()
 export class OnAnswerCreated implements EventHandler {
   constructor(
     private questionsRepository: QuestionsRepository,

@@ -20,3 +20,5 @@ export * from './comment-on-answer.controller'
 export * from './fetch-answer-comments.controller'
 
 export * from './upload-attachment.controller'
+
+export * from './read-notification.controller'
